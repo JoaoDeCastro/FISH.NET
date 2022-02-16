@@ -1,0 +1,87 @@
+﻿@model IEnumerable<FishDemo.Models.CustomerModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List Of Customers</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmergencyContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PickUpStreet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PickUpCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PickUpState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PickUpZip)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmergencyContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PickUpStreet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PickUpCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PickUpState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PickUpZip)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CustomerId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CustomerId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CustomerId })
+        </td>
+    </tr>
+}
+
+</table>

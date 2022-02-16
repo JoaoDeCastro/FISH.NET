@@ -1,0 +1,146 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container ">
+    <div class="row">
+        <div class="col-1 text-center">
+            <h1 class="display-4">Welcome</h1>
+            <p class="lead">Friends in Service Here</p>
+            @*<img src="~/images/ride.jpeg"class="img-responsive" style="width:50%; height:50%;" alt="Alternate Text" />*@
+        </div>
+    </div>
+
+
+
+</div>
+
+<hr />
+
+
+
+@*intro logo*@
+<section id="intro" class="" style="margin-bottom:50px;">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-md-6">
+
+                <img src="~/images/FISH logo.jpg" alt="" style="width:60%; margin:auto" class="img-responsive text-center" />
+
+                <h2 style="text-align:center">About Us</h2>
+                <p style="text-align:center">
+                    FISH ( Friends In Service Here) of New Fairfield is a non-profit, all
+                    volunteer organization that is incorporated in the state of Connecticut.
+                    We pair Senior Citizens and/or other New Fairfield residents who cannot drive
+                    themselves with a network of dedicated volunteers in New Fairfield.
+                    These volunteers can provide transportation to medical and dental appointments
+                    in and out of New Fairfield, Danbury, New Milford, Bethel or Brookfield and to
+                    the merchants, New Fairfield Food Bank, the Post Office, etc.
+                    within New Fairfield. We are a recognized 501(c)(3) and
+                    we accept no payment for our services. We do, however, welcome donations
+                    to FISH to allow us to cover our administrative expenses.
+                </p>
+
+
+            </div>
+            <div class="col-md-3"></div>
+
+            @*donate*@
+            <div class="col-md-3 text-center bg-default">
+                <form action="https://www.paypal.com/donate" method="post" target="_blank">
+                    <h2>Donate</h2>
+                    <img src="/images/FISH_heart.jpg" style="height: 200px; width: 200px;" class="mx-auto d-block" alt="">
+                    <p class="lead">
+                        Through your donation we have been able to continue working providing essential
+                        service <br>
+                        You truly make the <span style="font-weight: 800;">difference</span> for us, and we are <span style="font-weight: 800;">extremely grateful!</span>
+                    </p>
+
+                    <p>You can use any credit card, and do not need a PayPal account to donate.</p>
+                    <P>Just click on the button below:</P>
+
+                    <input type="hidden" name="hosted_button_id" value="3QGFBWMBNPQ72" />
+                    <input type="image" src="/images/paypall.png" name="submit"
+                           title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button"
+                           style="height: 150px;" />
+                    <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" />
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <hr />
+</section>
+
+
+
+
+
+@*service cards*@
+
+<section id="cards" class=" text-center text-sm-start" style="margin-bottom:50px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h1>Book a Ride</h1>
+                <p class="lead">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                </p>
+                <button type="button" class="btn btn-info btn-lg btn-block">Info</button>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5 text-center">
+                <h1>Join Us</h1>
+                <p class="lead">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                </p>
+
+                @Html.ActionLink("Book Your Ride", "Create", "CustomerModels" , new { @class = "btn btn-info btn-lg btn-block" })
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+@*contact us email*@
+
+
+@*footer section*@
+
+<div class="container text-center">
+    <hr />
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-md-3">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">*** ADDRESS ***</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="#">Join Us</a></li>
+                    <li><a href="#">FaceBook</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
