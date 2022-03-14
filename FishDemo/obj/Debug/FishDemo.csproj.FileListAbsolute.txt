@@ -137,3 +137,14 @@ C:\WORK_SPACE\ASP.NET\FishDemo\FishDemo\FishDemo\bin\System.IdentityModel.Tokens
 C:\WORK_SPACE\ASP.NET\FishDemo\FishDemo\FishDemo\bin\Twilio.xml
 C:\WORK_SPACE\ASP.NET\FishDemo\FishDemo\FishDemo\obj\Debug\FishDemo.Migrations.test.resources
 C:\WORK_SPACE\ASP.NET\FishDemo\FishDemo\FishDemo\obj\Debug\FishDemo.Migrations.zip.resources
+C:\WORK_SPACE\ASP.NET\FishDemo\FishDemo\FishDemo\obj\Debug\FishDemo.Migrations.roles.resources
+C:\WORK_SPACE\ASP.NET\FishDemo\FishDemo\FishDemo\obj\Debug\FishDemo.Migrations.addingUsers.resources
+C:\WORK_SPACE\ASP.NET\FishDemo\FishDemo\FishDemo\obj\Debug\FishDemo.Migrations.driver1.resources
+C:\WORK_SPACE\ASP.NET\FishDemo\FishDemo\FishDemo\obj\Debug\FishDemo.Migrations.driverUpdate.resources
+C:\WORK_SPACE\ASP.NET\FishDemo\FishDemo\FishDemo\obj\Debug\FishDemo.Migrations.back.resources
+C:\WORK_SPACE\ASP.NET\FishDemo\FishDemo\FishDemo\bin\OpenPop.dll
+C:\WORK_SPACE\ASP.NET\FishDemo\FishDemo\FishDemo\bin\Microsoft.Configuration.ConfigurationBuilders.Base.dll
+C:\WORK_SPACE\ASP.NET\FishDemo\FishDemo\FishDemo\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll
+C:\WORK_SPACE\ASP.NET\FishDemo\FishDemo\FishDemo\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
+C:\WORK_SPACE\ASP.NET\FishDemo\FishDemo\FishDemo\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml
+C:\WORK_SPACE\ASP.NET\FishDemo\FishDemo\FishDemo\obj\Debug\FishDemo.Migrations.populateRoles.resources

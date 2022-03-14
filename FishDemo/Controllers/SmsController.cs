@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using Twilio;
@@ -32,5 +33,23 @@ namespace FishDemo.Controllers
             
 
         }
-    }
+        public ActionResult SendEmail()
+        {
+            MailMessage mail = new MailMessage();
+            mail.To.Add("joaohcguitar@gmail.com");
+            mail.From = new MailAddress("joaohcguitar@gmail.com");
+            mail.Subject = "hello from .NET";
+            mail.Body = "this is a test";
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new System.Net.NetworkCredential("joaodecastro.bits@gmail.com", "knrcdmaoirnuyjci");
+            smtp.EnableSsl = true;
+
+            smtp.Send(mail);
+            return Content("Mail sent");
+        }
+
+     }
 }

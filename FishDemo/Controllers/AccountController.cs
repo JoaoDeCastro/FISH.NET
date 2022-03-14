@@ -1,4 +1,4 @@
-﻿using System;
+﻿  using System;
 using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
@@ -87,7 +87,7 @@ namespace FishDemo.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                    ModelState.AddModelError("", "Invalid attempt.");
                     return View(model);
             }
         }
@@ -157,10 +157,7 @@ namespace FishDemo.Controllers
                 if (result.Succeeded)
                 {
 
-                   var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
-                    var roleManager = new RoleManager<IdentityRole>(roleStore);
-                    await roleManager.CreateAsync(new IdentityRole("Adm"));
-                    await UserManager.AddToRoleAsync(user.Id, "Adm");
+                  
 
 
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);

@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -17,14 +17,11 @@ namespace FishDemo.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: CustomerModels
-        
+        /*[Authorize (Roles = "Manager")]*/
+        [Authorize(Roles = "Manager, adm")]
         public ActionResult Index()
         {
-            if(!User.IsInRole("Adm"))
-            {
-                return View("ReadOnlyList", db.Customers.ToList());
-            }
-
+            
             return View(db.Customers.ToList());
         }
 
@@ -46,8 +43,13 @@ namespace FishDemo.Controllers
         }
 
         // GET: CustomerModels/Create
-        /*[Authorize(Roles = "Adm")]*/
+        
         public ActionResult Create()
+        {
+            return View();
+        }
+
+        public ActionResult Success()
         {
             return View();
         }
@@ -64,13 +66,14 @@ namespace FishDemo.Controllers
                 db.Customers.Add(customerModel);
                 
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Success");
             }
 
             return View(customerModel);
         }
 
         // GET: CustomerModels/Edit/5
+        [Authorize(Roles = "Manager, adm")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -96,12 +99,13 @@ namespace FishDemo.Controllers
             {
                 db.Entry(customerModel).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Success");
             }
             return View(customerModel);
         }
 
         // GET: CustomerModels/Delete/5
+        [Authorize(Roles = "Manager, adm")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

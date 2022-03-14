@@ -11,7 +11,7 @@ namespace FishDemo.Models
         [ForeignKey("DriverId")]
         public int DriverId { get; set; }
         public DriverModel Driver { get; set; }
-        public List <DateTime> DatesAvailable { get; set; }
+        public ICollection <DateTime> DatesAvailable { get; set; }
 
     }
 }

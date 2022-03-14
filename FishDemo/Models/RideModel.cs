@@ -8,9 +8,9 @@ namespace FishDemo.Models
 {
     public enum RideStatus
     {
-        Pending,
-        InProgress,
-        Commited,
+        Pending = 1,
+        InProgress = 2,
+        Commited = 3,
         Done
     }
 
@@ -24,7 +24,7 @@ namespace FishDemo.Models
         [Required]
         [Display(Name = "Date of pick up")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:MM-dd-yyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:MMM-dd-yyy}", ApplyFormatInEditMode = true)]
         public DateTime pickUpDate { get; set; }
 
         public RideStatus Status { get; set; }
@@ -32,6 +32,7 @@ namespace FishDemo.Models
         [Required]
         [Display(Name = "Time for pick up")]
         [DataType(DataType.Time)]
+        
         public string Time { get; set; }
 
         [Required]
@@ -61,6 +62,10 @@ namespace FishDemo.Models
         [StringLength(255)]
         [Display(Name = "Lenght Of Appointment")]
         public string LenghtOfAppointment { get; set; }
+
+       
+        // need to have one to one relationship
+        // a ride has a customer
 
     }
 }

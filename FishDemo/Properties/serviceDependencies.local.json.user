@@ -1,9 +1,9 @@
 {
-  "dependencies": {
-    "mssql1": {
-      "restored": true,
-      "restoreTime": "2022-01-25T15:26:17.9499846Z"
+  "dependencies": {},
+  "parameters": {
+    "subscriptionId": {
+      "Type": "subscription",
+      "Value": "2781aa23-fded-447c-8bf0-e52cfac3f5a7"
     }
-  },
-  "parameters": {}
+  }
 }

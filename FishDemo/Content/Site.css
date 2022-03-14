@@ -33,3 +33,7 @@ textarea {
 .section{
     margin-bottom: 20px;
 }
+ .picture img {
+      
+        opacity: 0.6;
+    }

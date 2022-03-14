@@ -35,7 +35,7 @@ namespace FishDemo.Models
         public string Phone { get; set; }
         [Required]
         [StringLength(255)]
-        [Display(Name = "Emergency Contact")]
+        [Display(Name = "Emergency Phone Contact")]
         [Phone]
         public string EmergencyContact { get; set; }
 
@@ -70,7 +70,9 @@ namespace FishDemo.Models
 
        
         public virtual RideModel ride { get; set; }
-       
-
+        //needs to be a list of rides
     }
+
 }
+
+    

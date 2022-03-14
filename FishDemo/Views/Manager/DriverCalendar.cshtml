@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css" rel="stylesheet" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css" rel="stylesheet" media="print" />
+
+
+<h2>
+    Drivers' Calendar
+</h2>
+@Html.ActionLink("Back to Panel", "Panel", "Manager", new { area = "" }, new { @class = "btn btn-info" })
+<hr />
+<div id="calendar"></div>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"><span id="eventTitle"></span></h4>
+            </div>
+            <div class="modal-body">
+                <p id="pDetails"></p>
+
+            </div>
+            <div class="modal-footer">
+                @*@Html.ActionLink("Details", "Index", "CustomerModels", new { area = "" }, new { @class = "btn btn-info" })*@
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var events = [];
+
+            $.ajax({
+                type: "GET",
+                url: "/manager/GetDrivers",
+
+                success: function (data) {
+                    $.each(data, function (i, v) {
+                        events.push({
+
+                            title: v.FirstName,
+                            description: v.FirstName,
+                            start: v.DateAvailable,
+                            lName: v.LastName,
+                            phone: v.Phone,
+                            
+                            
+                            color: "purple",
+                            //backgroundcolor
+                            //borderColor
+
+
+                        });
+                    })
+
+                    GenerateCalender(events);
+                },
+                error: function (error) {
+                    alert('failed');
+                }
+            })
+
+            function GenerateCalender(events) {
+                $('#calendar').fullCalendar('destroy');
+                $('#calendar').fullCalendar({
+                    contentHeight: 400,
+                    defaultDate: new Date(),
+                    timeFormat: 'HH:mm',
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,basicWeek,basicDay,agenda'
+                    },
+                    displayEventTime: false,
+
+                    eventLimit: true,
+                    eventColor: '#378022',
+                    events: events,
+                    eventClick: function (calEvent, jsEvent, view) {
+                        $('#myModal #eventTitle').text(calEvent.title);
+                        var $description = $('<div/>');
+
+
+                        @*$description.append($('<p/>').html('<b>Drivers first name: </b>' + calEvent.name));*@
+                        $description.append($('<p/>').html('<b>Drivers last Name: :</b>' + calEvent.lName));
+                        $description.append($('<p/>').html('<b>Date Available: </b>' + calEvent.start.format("MMM-DD-YYYY")));
+                        $description.append($('<p/>').html('<b>Phone Number: </b>' + calEvent.phone));
+
+
+
+
+                        $('#myModal #pDetails').empty().html($description);
+
+                        $('#myModal').modal();
+                    }
+                })
+            }
+        })
+    </script>
+}

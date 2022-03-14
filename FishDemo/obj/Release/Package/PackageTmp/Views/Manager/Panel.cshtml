@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Panel";
+}
+
+<h2>Manager Panel</h2>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            @Html.ActionLink("Customer Table", "Index", "CustomerModels", new { area = "" }, new { @class = "btn btn-info btn-block" })
+        </div>
+        <div class="col-md-3">
+            @Html.ActionLink("Ride Calendar", "Calendar", "Manager", new { area = "" }, new { @class = "btn btn-info btn-block" })
+        </div>
+        <div class="col-md-3">
+            @Html.ActionLink("Drivers Calendar", "DriverCalendar", "Manager", new { area = "" }, new { @class = "btn btn-info btn-block" })
+        </div>
+        <div class="col-md-3">
+            @Html.ActionLink("Add driver", "CreateDriver", "Manager", new { area = "" }, new { @class = "btn btn-info btn-block" })
+        </div>
+
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-3">
+            @Html.ActionLink("Drivers List", "DriverList", "Manager", new { area = "" }, new { @class = "btn btn-info btn-block" })
+        </div>
+       @* <div class="col-md-3">
+            @Html.ActionLink("Ride Calendar", "Calendar", "Manager", new { area = "" }, new { @class = "btn btn-info btn-block" })
+        </div>
+        <div class="col-md-3">
+            @Html.ActionLink("Drivers Calendar", "Calendar", "Manager", new { area = "" }, new { @class = "btn btn-info btn-block" })
+        </div>
+        <div class="col-md-3">
+            @Html.ActionLink("Add driver", "CreateDriver", "Manager", new { area = "" }, new { @class = "btn btn-info btn-block" })
+        </div>*@
+
+    </div>
+</div>  
+

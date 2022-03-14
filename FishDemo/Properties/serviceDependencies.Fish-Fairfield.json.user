@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2022-03-11T02:34:02.131948Z"
+    }
+  },
+  "parameters": {
+    "FishDemo20220216123149.resourceGroupName": {
+      "Type": "resourceGroup",
+      "Value": "DefaultResourceGroup-CUS"
+    },
+    "FishDemo20220216123149.resourceName": {
+      "Type": null,
+      "Value": "FishDemo20220216123149"
+    },
+    "mssql1.subscriptionId": {
+      "Type": "subscription",
+      "Value": "2781aa23-fded-447c-8bf0-e52cfac3f5a7"
+    },
+    "FishDemo20220216123149.subscriptionId": {
+      "Type": "subscription",
+      "Value": "2781aa23-fded-447c-8bf0-e52cfac3f5a7"
+    },
+    "mssql1.resourceGroupName": {
+      "Type": "resourceGroup",
+      "Value": "DefaultResourceGroup-CUS"
+    },
+    "subscriptionId": {
+      "Type": "subscription",
+      "Value": "2781aa23-fded-447c-8bf0-e52cfac3f5a7"
+    },
+    "FishDemo20220216123149.resourceGroupLocation": {
+      "Type": null,
+      "Value": "centralus"
+    }
+  }
+}

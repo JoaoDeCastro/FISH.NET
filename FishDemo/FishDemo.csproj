@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -47,12 +48,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.Base, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.Base.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.UserSecrets, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.1.2\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.1.2\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenPop, Version=2.0.6.1120, Culture=neutral, PublicKeyToken=6bdb97f144b7efc8, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenPop.NET.2.0.6.1120\lib\net40\OpenPop.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -133,12 +149,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -190,8 +200,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomerModelsController.cs" />
+    <Compile Include="Controllers\DriverController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\RideModelsController.cs" />
     <Compile Include="Controllers\SmsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -281,6 +293,30 @@
     <Compile Include="Migrations\202202032159394_zip.Designer.cs">
       <DependentUpon>202202032159394_zip.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202171757242_roles.cs" />
+    <Compile Include="Migrations\202202171757242_roles.designer.cs">
+      <DependentUpon>202202171757242_roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202190117329_addingUsers.cs" />
+    <Compile Include="Migrations\202202190117329_addingUsers.designer.cs">
+      <DependentUpon>202202190117329_addingUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202211951313_driver1.cs" />
+    <Compile Include="Migrations\202202211951313_driver1.designer.cs">
+      <DependentUpon>202202211951313_driver1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202212210024_driverUpdate.cs" />
+    <Compile Include="Migrations\202202212210024_driverUpdate.designer.cs">
+      <DependentUpon>202202212210024_driverUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203021614294_back.cs" />
+    <Compile Include="Migrations\202203021614294_back.designer.cs">
+      <DependentUpon>202203021614294_back.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203110338152_populateRoles.cs" />
+    <Compile Include="Migrations\202203110338152_populateRoles.designer.cs">
+      <DependentUpon>202203110338152_populateRoles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdmModel.cs" />
@@ -296,11 +332,10 @@
     <Compile Include="ViewModels\CustomerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-cosmo.css" />
-    <Content Include="Content\bootstrap-journal.css" />
-    <Content Include="Content\bootstrap-slate.css" />
+    <Content Include="Content\bootstrap-paper.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-yeti.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -326,6 +361,14 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="documents\Board of Directors.docx" />
+    <Content Include="documents\Driver Application Form.pdf" />
+    <Content Include="documents\FISH OF NEW FAIRFIELD DRIVER GUIDELINES.pdf" />
+    <Content Include="documents\FISH OF NEW FAIRFIELD GUIDELINES FOR TELEPHONE DUTY.pdf" />
+    <Content Include="documents\FISH OF NEW FAIRFIELD USER GUIDELINES.pdf" />
+    <None Include="Properties\PublishProfiles\Fish-Fairfield.pubxml" />
+    <None Include="Properties\PublishProfiles\fish-newfairfield - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\fish-ride - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -416,7 +459,14 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\CustomerModels\Success.cshtml" />
+    <Content Include="Views\Driver\Panel.cshtml" />
+    <Content Include="Views\Driver\Calendar.cshtml" />
+    <Content Include="Views\Driver\DatesAvailable.cshtml" />
+    <Content Include="Views\Driver\CreateDriver.cshtml" />
+    <Content Include="Views\Driver\DriverCreated.cshtml" />
     <None Include="Views\Home\HtmlPage1.cshtml" />
+    <Content Include="Views\Home\Join.cshtml" />
     <None Include="Views\Home\test.cshtml" />
     <Content Include="images\facebook_icon.png" />
     <Content Include="images\FISH logo.jpg" />
@@ -474,11 +524,19 @@
     <Content Include="Views\RideModels\Edit.cshtml" />
     <Content Include="Views\RideModels\Index.cshtml" />
     <Content Include="Views\CustomerModels\ReadOnlyList.cshtml" />
+    <Content Include="Views\Manager\Panel.cshtml" />
+    <Content Include="Views\Manager\Calendar.cshtml" />
+    <Content Include="Views\Manager\CreateDriver.cshtml" />
+    <Content Include="Views\Manager\DriverCreated.cshtml" />
+    <Content Include="Views\Manager\newCalendar.cshtml" />
+    <Content Include="Views\Manager\DriverList.cshtml" />
+    <Content Include="Views\Manager\DriverCalendar.cshtml" />
+    <Content Include="Views\Manager\Delete.cshtml" />
+    <Content Include="Views\Sms\SendEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Ride\" />
-    <Folder Include="Views\Sms\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -547,6 +605,24 @@
     <EmbeddedResource Include="Migrations\202202032159394_zip.resx">
       <DependentUpon>202202032159394_zip.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202171757242_roles.resx">
+      <DependentUpon>202202171757242_roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202190117329_addingUsers.resx">
+      <DependentUpon>202202190117329_addingUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202211951313_driver1.resx">
+      <DependentUpon>202202211951313_driver1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202212210024_driverUpdate.resx">
+      <DependentUpon>202202212210024_driverUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203021614294_back.resx">
+      <DependentUpon>202203021614294_back.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203110338152_populateRoles.resx">
+      <DependentUpon>202203110338152_populateRoles.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
@@ -588,7 +664,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

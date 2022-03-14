@@ -1,0 +1,90 @@
+﻿@model FishDemo.Models.RideModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RideModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.pickUpDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pickUpDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DestinationStreet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DestinationStreet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DestinationCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DestinationCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DestinationState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DestinationState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DestinationZip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DestinationZip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialNeed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialNeed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LenghtOfAppointment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LenghtOfAppointment)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RideId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

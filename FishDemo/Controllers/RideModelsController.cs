@@ -21,6 +21,7 @@ namespace FishDemo.Controllers
         }
 
         // GET: RideModels/Details/5
+        
         public ActionResult Details(int? id)
         {
             if (id == null)

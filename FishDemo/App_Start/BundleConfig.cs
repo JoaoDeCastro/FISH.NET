@@ -23,7 +23,7 @@ namespace FishDemo
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap-journal.css",
+                      "~/Content/bootstrap-paper.css",
                       "~/Content/Site.css"));
         }
     }

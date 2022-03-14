@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using FishDemo.ViewModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -27,6 +28,7 @@ namespace FishDemo.Models
         public DbSet <SchedulerModel> Schedulers{ get; set; }
         public DbSet <DriverModel> Drivers{ get; set; }
        
+        public object CustomerViewModel { get; internal set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -37,5 +39,15 @@ namespace FishDemo.Models
         {
             return new ApplicationDbContext();
         }
+
+        /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+          *//*  // Configure Student & StudentAddress entity
+            modelBuilder.Entity<CustomerModel>()
+                        .HasOptional(s => s.ride) // Mark Address property optional in Student entity
+                        .WithRequired(ad => ad.Customer); // mark Student property as required in StudentAddress entity. Cannot save StudentAddress without Student*//*
+        }*/
+
     }
+    
 }
